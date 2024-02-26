@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://c6j7wah6lnix7"]
+
+[ext_resource type="Texture2D" uid="uid://bqgi1t87krcd2" path="res://Assets/circle.png" id="1_rhat7"]
+[ext_resource type="Script" path="res://Scripts/hole.gd" id="2_b6foi"]
+[ext_resource type="PackedScene" uid="uid://cktq1u2w3wtn7" path="res://Scenes/egg.tscn" id="2_g1cyf"]
+[ext_resource type="PackedScene" uid="uid://b5iharwioy5sn" path="res://Scenes/candy.tscn" id="3_flfao"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p8oq8"]
+radius = 50.0
+
+[node name="Hole" type="Area2D"]
+script = ExtResource("2_b6foi")
+eggItem = ExtResource("2_g1cyf")
+candyItem = ExtResource("3_flfao")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0, 0.0941176, 0.533333, 1)
+position = Vector2(-4.13477, 4.13477)
+scale = Vector2(0.309908, 0.309908)
+texture = ExtResource("1_rhat7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 4)
+shape = SubResource("CircleShape2D_p8oq8")

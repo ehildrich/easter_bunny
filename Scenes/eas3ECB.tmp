@@ -1,0 +1,167 @@
+[gd_scene load_steps=6 format=3 uid="uid://bhjxmk5p7vbyb"]
+
+[ext_resource type="PackedScene" uid="uid://cicrahjuh67h3" path="res://Scenes/bunny.tscn" id="1_xi74a"]
+[ext_resource type="PackedScene" uid="uid://c6j7wah6lnix7" path="res://Scenes/hole.tscn" id="1_xkuxr"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="2_4devi"]
+[ext_resource type="Theme" uid="uid://v4sgpvr6wlu5" path="res://UITheme.tres" id="3_4uxnd"]
+[ext_resource type="Texture2D" uid="uid://c5cqc2ehqtvcm" path="res://Assets/pit.png" id="4_ooejm"]
+
+[node name="EasterBunny" type="Node2D"]
+
+[node name="BackDrop" type="Node2D" parent="."]
+
+[node name="Forest" type="ColorRect" parent="BackDrop"]
+offset_right = 800.0
+offset_bottom = 800.0
+color = Color(0.0941176, 0.376471, 0.0941176, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsTop" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_right = 1600.0
+offset_bottom = 800.0
+color = Color(0.407843, 0.596078, 0.25098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsMiddleLeft" type="ColorRect" parent="BackDrop"]
+offset_top = 800.0
+offset_right = 800.0
+offset_bottom = 1600.0
+color = Color(0.501961, 0.501961, 0.0941176, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsMiddleRight" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_top = 800.0
+offset_right = 1600.0
+offset_bottom = 1600.0
+color = Color(0.627451, 0.376471, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsBottom" type="ColorRect" parent="BackDrop"]
+offset_top = 1600.0
+offset_right = 800.0
+offset_bottom = 2400.0
+color = Color(0.407843, 0.596078, 0.25098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Buildings" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_top = 1600.0
+offset_right = 1600.0
+offset_bottom = 2400.0
+color = Color(0.156863, 0.313726, 0.690196, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Holes" type="Node2D" parent="."]
+
+[node name="YHole1" parent="Holes" instance=ExtResource("1_xkuxr")]
+position = Vector2(250, 1050)
+
+[node name="YHole2" parent="Holes" instance=ExtResource("1_xkuxr")]
+position = Vector2(550, 1050)
+
+[node name="Pit" type="StaticBody2D" parent="."]
+position = Vector2(2000, 400)
+scale = Vector2(0.26455, 0.26455)
+
+[node name="PitScreen" type="Sprite2D" parent="Pit"]
+texture = ExtResource("4_ooejm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit"]
+polygon = PackedVector2Array(-748.441, 1296.54, -740.881, -1436.4, -1050.84, -1440.18, -1058.4, 1583.82, 1130.22, 1583.82, 1134, -1489.32, 752.22, -1485.54, 752.22, 1296.54)
+
+[node name="Bunny" parent="." instance=ExtResource("1_xi74a")]
+position = Vector2(498, 444)
+scale = Vector2(0.255, 0.255)
+speedMultiplier = 0.5
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(415, 400)
+script = ExtResource("2_4devi")
+player = NodePath("../Bunny")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LeftPanel" type="PanelContainer" parent="UI"]
+offset_right = 200.0
+offset_bottom = 800.0
+theme = ExtResource("3_4uxnd")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/LeftPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Eggs" type="Panel" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+modulate = Color(0.721569, 0.564706, 0.972549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4uxnd")
+
+[node name="Spacer" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer3" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Energy" type="Label" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "9999"
+horizontal_alignment = 1
+
+[node name="RightPanel" type="PanelContainer" parent="UI"]
+offset_left = 1000.0
+offset_right = 1200.0
+offset_bottom = 800.0
+theme = ExtResource("3_4uxnd")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/RightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RightPanel/MarginContainer2"]
+layout_mode = 2
+
+[node name="Power" type="Panel" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+modulate = Color(0.721569, 0.564706, 0.972549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4uxnd")
+
+[node name="Spacer" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer3" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Candy" type="Label" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "10"
+horizontal_alignment = 1
+
+[connection signal="body_entered" from="Holes/YHole1" to="Bunny" method="_on_hole_body_entered"]
+[connection signal="body_exited" from="Holes/YHole1" to="Bunny" method="_on_hole_body_exited"]
+[connection signal="body_entered" from="Holes/YHole2" to="Bunny" method="_on_hole_body_entered"]

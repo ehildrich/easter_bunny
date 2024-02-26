@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://b5iharwioy5sn"]
+
+[ext_resource type="Script" path="res://Scripts/Candy.gd" id="1_rmomb"]
+[ext_resource type="Texture2D" uid="uid://dgv5grpip4agg" path="res://Assets/hole.png" id="2_wjdq5"]
+[ext_resource type="AudioStream" uid="uid://dgpknv0eu4xsi" path="res://Sound Effects/pickup.wav" id="3_prae8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3r58"]
+radius = 160.0
+
+[node name="Candy" type="Area2D"]
+y_sort_enabled = true
+scale = Vector2(0.05, 0.05)
+script = ExtResource("1_rmomb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_wjdq5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_h3r58")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_prae8")

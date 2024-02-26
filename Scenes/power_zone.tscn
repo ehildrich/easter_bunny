@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://pln40b5r38tm"]
+
+[ext_resource type="Script" path="res://Scripts/powerZone.gd" id="1_j0ocr"]
+[ext_resource type="PackedScene" uid="uid://c405cr3v2exmp" path="res://Scenes/egg_indicator.tscn" id="2_ts6mq"]
+[ext_resource type="PackedScene" uid="uid://b5iharwioy5sn" path="res://Scenes/candy.tscn" id="3_o3kmv"]
+[ext_resource type="AudioStream" uid="uid://dq6rywi3loyje" path="res://Sound Effects/power.wav" id="4_ne8ng"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1veg"]
+radius = 84.0
+
+[node name="PowerZone" type="Area2D"]
+script = ExtResource("1_j0ocr")
+eggIndicator = ExtResource("2_ts6mq")
+candyItem = ExtResource("3_o3kmv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_q1veg")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ne8ng")

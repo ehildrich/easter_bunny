@@ -1,0 +1,91 @@
+[gd_scene load_steps=13 format=3 uid="uid://cicrahjuh67h3"]
+
+[ext_resource type="Script" path="res://Scripts/bunny.gd" id="1_2lqmg"]
+[ext_resource type="Texture2D" uid="uid://cbu67f1i1n4y0" path="res://Assets/head.png" id="2_cm244"]
+[ext_resource type="Script" path="res://Scripts/power.gd" id="3_56t6v"]
+[ext_resource type="Texture2D" uid="uid://nmiycpl4v0l1" path="res://Assets/body1.png" id="3_fue6c"]
+[ext_resource type="Texture2D" uid="uid://bcnixdurwnro0" path="res://Assets/body2.png" id="3_lmkou"]
+[ext_resource type="Texture2D" uid="uid://b6h3a6vanquvr" path="res://Assets/body3.png" id="5_bsjfy"]
+[ext_resource type="Texture2D" uid="uid://b04qec6u6sppu" path="res://Assets/ship.png" id="7_se4xa"]
+[ext_resource type="Texture2D" uid="uid://dpqiayseh71b6" path="res://Assets/sleep.png" id="8_44ifp"]
+[ext_resource type="AudioStream" uid="uid://udm7jg7qh801" path="res://Sound Effects/move.wav" id="9_8tc43"]
+[ext_resource type="AudioStream" uid="uid://dcycjsj1rgkxa" path="res://Sound Effects/ship.wav" id="9_pdmp6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ouveg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fue6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bsjfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fue6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lmkou")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oemr"]
+size = Vector2(131, 200)
+
+[node name="Bunny" type="CharacterBody2D"]
+script = ExtResource("1_2lqmg")
+speedMultiplier = 0.8
+
+[node name="Head" type="CharacterBody2D" parent="."]
+script = ExtResource("3_56t6v")
+speedMultiplier = 0.8
+
+[node name="HeadSprite" type="Sprite2D" parent="Head"]
+position = Vector2(-13, -178)
+texture = ExtResource("2_cm244")
+
+[node name="Timer" type="Timer" parent="Head"]
+wait_time = 0.5
+one_shot = true
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ouveg")
+animation = &"Walk"
+frame_progress = 0.165004
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 25)
+shape = SubResource("RectangleShape2D_5oemr")
+
+[node name="Ship" type="CharacterBody2D" parent="."]
+z_index = 5
+position = Vector2(2.5, 25)
+
+[node name="Sprite2D" type="Sprite2D" parent="Ship"]
+position = Vector2(0, -130)
+scale = Vector2(1.715, 1.715)
+texture = ExtResource("7_se4xa")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[node name="DeadSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("8_44ifp")
+
+[node name="WalkTimer" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
+
+[node name="WalkAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_8tc43")
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_pdmp6")
+
+[connection signal="floating" from="Head" to="." method="_on_head_floating"]
+[connection signal="not_floating" from="Head" to="." method="_on_head_not_floating"]
+[connection signal="timeout" from="Head/Timer" to="Head" method="_on_timer_timeout"]

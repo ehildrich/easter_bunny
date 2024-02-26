@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 210 297"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="agent.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.0381216"
+     inkscape:cx="369.89885"
+     inkscape:cy="550.03188"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       d="m 136.42837,144.74052 c -3.26024,2.8463 -10.10483,4.66173 -17.62839,4.67568 -6.11962,-0.0136 -11.87501,-1.22288 -15.56856,-3.27112 l -2.48925,0.10542 -7.749462,57.23282 -13.54904,-1.27228 17.16639,11.6458 5.393472,-2.61431 -0.18035,4.90823 3.60443,1.91358 17.48117,-56.32176 11.76569,17.35036 -16.40004,14.39861 1.8924,3.28094 3.24373,-1.09348 -1.44178,4.37441 12.52534,12.02924 -3.0639,-10.75335 25.95156,-16.76848 -13.5673,-40.13295 z"
+       style="stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+       id="path14"
+       inkscape:label="Legs"
+       sodipodi:nodetypes="ccccccccccccccccccccc" />
+    <g
+       id="g14"
+       inkscape:label="Torso">
+      <path
+         d="m 119.40511,93.533309 v 55.891161 c 14.06977,0.13976 25.85114,-2.36626 25.85114,-2.36626 l 0.91364,-7.1422 c 5.59051,-2.51327 16.61048,-8.5092 16.61966,-16.74472 0.0123,-11.02892 -9.91401,-27.871635 -10.73527,-29.24679 l 0.0501,-0.391191 z"
+         style="fill:#4830b0;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+         id="path12" />
+      <path
+         d="m 93.173119,93.533309 0.0692,0.529683 c -1.48223,2.449865 -11.58993,19.984548 -5.87561,34.121948 3.18499,7.87977 8.36903,11.01225 11.94656,12.26644 l 0.888321,6.78718 c 5.66532,1.39148 11.62073,1.98517 17.29196,2.1394 V 93.533309 Z"
+         style="fill:#4830b0;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+         id="path11" />
+    </g>
+    <path
+       style="fill:#4830b0;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8;stroke-dasharray:none"
+       d="m 116.55622,58.03964 -1.65774,-5.843838 12.26035,4.859038 0.33857,-4.233578 12.85988,13.244048 2.76997,-2.856326 -1.93071,17.583973 3.2669,3.301566 -9.12885,5.304734 -9.71168,-3.693568 -12.9545,-0.695714 -6.71165,0.255481 1.52309,-3.778196 -7.36398,-5.391237 4.57435,-5.236491 -5.376281,-12.364818 C 108.82821,56.853215 114.8656,57.613782 116.55624,58.03964 Z"
+       id="path6"
+       sodipodi:nodetypes="cccccccccccccccccc"
+       inkscape:label="Hair" />
+    <circle
+       style="fill:#f8b870;fill-opacity:1;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8;stroke-dasharray:none"
+       id="path4"
+       cx="122.34602"
+       cy="80.283218"
+       r="17.968149"
+       inkscape:label="Face" />
+    <path
+       d="m 122.34602,77.347217 -1.60714,0.0072 -22.023981,0.09405 15.277111,11.109399 8.35401,-9.395809 8.35453,9.395809 15.27659,-11.109399 -22.02347,-0.09405 z"
+       style="opacity:1;vector-effect:none;fill-rule:evenodd;stroke:#ffffff;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8;stop-color:#000000;stop-opacity:1"
+       id="path10"
+       inkscape:label="Glasses" />
+  </g>
+</svg>

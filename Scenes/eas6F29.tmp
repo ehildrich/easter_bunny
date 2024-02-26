@@ -1,0 +1,364 @@
+[gd_scene load_steps=19 format=3 uid="uid://bhjxmk5p7vbyb"]
+
+[ext_resource type="Script" path="res://Scripts/world.gd" id="1_w7id3"]
+[ext_resource type="PackedScene" uid="uid://cicrahjuh67h3" path="res://Scenes/bunny.tscn" id="1_xi74a"]
+[ext_resource type="PackedScene" uid="uid://c6j7wah6lnix7" path="res://Scenes/hole.tscn" id="1_xkuxr"]
+[ext_resource type="Script" path="res://Scripts/camera.gd" id="2_4devi"]
+[ext_resource type="Theme" uid="uid://v4sgpvr6wlu5" path="res://UITheme.tres" id="3_4uxnd"]
+[ext_resource type="Texture2D" uid="uid://c7cg85as20o1e" path="res://Assets/tree.png" id="3_dysvd"]
+[ext_resource type="Texture2D" uid="uid://c5cqc2ehqtvcm" path="res://Assets/pit.png" id="4_ooejm"]
+[ext_resource type="Texture2D" uid="uid://bdxsr6t6wj3fw" path="res://Assets/emptyBasket.png" id="7_ebswh"]
+[ext_resource type="Script" path="res://Scripts/candyCounter.gd" id="8_hgawp"]
+[ext_resource type="Script" path="res://Scripts/eggCounter.gd" id="8_r304t"]
+[ext_resource type="PackedScene" uid="uid://b5iharwioy5sn" path="res://Scenes/candy.tscn" id="9_oj7iy"]
+[ext_resource type="Script" path="res://Scripts/powerIndicator.gd" id="10_1qqgf"]
+[ext_resource type="PackedScene" uid="uid://pln40b5r38tm" path="res://Scenes/power_zone.tscn" id="12_rqp4q"]
+[ext_resource type="Script" path="res://Scripts/energyCounter.gd" id="14_nlhrt"]
+[ext_resource type="PackedScene" uid="uid://dcr582khfswtc" path="res://Scenes/agent.tscn" id="15_p745w"]
+[ext_resource type="Texture2D" uid="uid://dr6e8eonnd7di" path="res://Assets/lab.png" id="17_oxn28"]
+[ext_resource type="PackedScene" uid="uid://csitko52s40g5" path="res://Scenes/scientist.tscn" id="17_txmc1"]
+[ext_resource type="Texture2D" uid="uid://cc3bdi5d3vo6k" path="res://Assets/jailhouse.png" id="18_y6p5e"]
+
+[node name="EasterBunny" type="Node2D"]
+script = ExtResource("1_w7id3")
+powerZone = ExtResource("12_rqp4q")
+agent = ExtResource("15_p745w")
+scientist = ExtResource("17_txmc1")
+
+[node name="BackDrop" type="Node2D" parent="."]
+
+[node name="Forest" type="ColorRect" parent="BackDrop"]
+offset_right = 800.0
+offset_bottom = 800.0
+color = Color(0.0941176, 0.376471, 0.0941176, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsTop" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_right = 1600.0
+offset_bottom = 800.0
+color = Color(0.407843, 0.596078, 0.25098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsMiddleLeft" type="ColorRect" parent="BackDrop"]
+offset_top = 800.0
+offset_right = 800.0
+offset_bottom = 1600.0
+color = Color(0.501961, 0.501961, 0.0941176, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsMiddleRight" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_top = 800.0
+offset_right = 1600.0
+offset_bottom = 1600.0
+color = Color(0.627451, 0.376471, 0.12549, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="WellsBottom" type="ColorRect" parent="BackDrop"]
+offset_top = 1600.0
+offset_right = 800.0
+offset_bottom = 2400.0
+color = Color(0.407843, 0.596078, 0.25098, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Buildings" type="ColorRect" parent="BackDrop"]
+offset_left = 800.0
+offset_top = 1600.0
+offset_right = 1600.0
+offset_bottom = 2400.0
+color = Color(0.156863, 0.313726, 0.690196, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Trees" type="Node2D" parent="."]
+
+[node name="Tree1" type="Sprite2D" parent="Trees"]
+position = Vector2(683, 162)
+scale = Vector2(0.522293, 0.522293)
+texture = ExtResource("3_dysvd")
+
+[node name="Tree2" type="Sprite2D" parent="Trees"]
+position = Vector2(683, 629)
+scale = Vector2(0.522293, 0.522293)
+texture = ExtResource("3_dysvd")
+
+[node name="Tree3" type="Sprite2D" parent="Trees"]
+position = Vector2(133, 629)
+scale = Vector2(0.522293, 0.522293)
+texture = ExtResource("3_dysvd")
+
+[node name="Tree4" type="Sprite2D" parent="Trees"]
+position = Vector2(133, 162)
+scale = Vector2(0.522293, 0.522293)
+texture = ExtResource("3_dysvd")
+
+[node name="Pit" type="StaticBody2D" parent="."]
+position = Vector2(2000, 400)
+scale = Vector2(0.26455, 0.26455)
+
+[node name="PitScreen" type="Sprite2D" parent="Pit"]
+texture = ExtResource("4_ooejm")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Pit"]
+polygon = PackedVector2Array(-748.441, 1296.54, -740.881, -1436.4, -1050.84, -1440.18, -1058.4, 1583.82, 1130.22, 1583.82, 1134, -1489.32, 752.22, -1485.54, 752.22, 1296.54)
+
+[node name="Holes" type="Node2D" parent="."]
+
+[node name="YHole1" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(250, 1050)
+
+[node name="YHole2" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(550, 1050)
+
+[node name="YHole3" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(250, 1350)
+
+[node name="YHole4" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(550, 1350)
+
+[node name="TopHole1" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1200, 250)
+scale = Vector2(1.15, 0.8)
+
+[node name="TopHole2" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1425, 400)
+scale = Vector2(0.7, 4.5)
+
+[node name="TopHole3" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1200, 550)
+scale = Vector2(1.15, 0.8)
+
+[node name="TopHole4" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(975, 400)
+scale = Vector2(0.7, 4.5)
+
+[node name="OHole1" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1200, 975)
+scale = Vector2(2, 0.9)
+
+[node name="OHole2" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1375, 1200)
+scale = Vector2(2, 0.9)
+
+[node name="OHole3" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1200, 1425)
+scale = Vector2(2, 0.9)
+
+[node name="OHole4" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(1025, 1200)
+scale = Vector2(2, 0.9)
+
+[node name="BottomHole1" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(275, 2200)
+
+[node name="BottomHole2" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(525, 2200)
+
+[node name="BottomHole3" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(550, 1900)
+rotation = -0.785398
+scale = Vector2(0.75, 2.5)
+
+[node name="BottomHole4" parent="Holes" groups=["Holes"] instance=ExtResource("1_xkuxr")]
+position = Vector2(250, 1900)
+rotation = 0.785398
+scale = Vector2(0.75, 2.5)
+
+[node name="Bunny" parent="." instance=ExtResource("1_xi74a")]
+y_sort_enabled = true
+scale = Vector2(0.255, 0.255)
+speedMultiplier = 0.5
+
+[node name="WorldCandies" type="Node2D" parent="."]
+position = Vector2(399, 2323)
+scale = Vector2(0.05, 0.05)
+
+[node name="Candy" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(18100, -39080)
+scale = Vector2(1, 1)
+
+[node name="Candy13" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(13620, -44220)
+scale = Vector2(1, 1)
+
+[node name="Candy14" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(18900, -31780)
+scale = Vector2(1, 1)
+
+[node name="Candy2" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(13780, -37680)
+scale = Vector2(1, 1)
+
+[node name="Candy3" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(19960, -25660)
+scale = Vector2(1, 1)
+
+[node name="Candy4" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(15940, -23900)
+scale = Vector2(1, 1)
+
+[node name="Candy5" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(15920, -20220)
+scale = Vector2(1, 1)
+
+[node name="Candy6" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(11580, -15880)
+scale = Vector2(1, 1)
+
+[node name="Candy7" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(20.0015, -22320)
+scale = Vector2(1, 1)
+
+[node name="Candy8" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(5420, -22260)
+scale = Vector2(1, 1)
+
+[node name="Candy9" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(-5400, -22180)
+scale = Vector2(1, 1)
+
+[node name="Candy10" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(19.999, -12200)
+scale = Vector2(1, 1)
+
+[node name="Candy11" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+position = Vector2(-0.000488281, -5520)
+scale = Vector2(1, 1)
+
+[node name="Candy12" parent="WorldCandies" instance=ExtResource("9_oj7iy")]
+scale = Vector2(1, 1)
+
+[node name="Camera2D" type="Camera2D" parent="." node_paths=PackedStringArray("player")]
+position = Vector2(415, 400)
+script = ExtResource("2_4devi")
+player = NodePath("../Bunny")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="LeftPanel" type="PanelContainer" parent="UI"]
+offset_right = 200.0
+offset_bottom = 800.0
+theme = ExtResource("3_4uxnd")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/LeftPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/LeftPanel/MarginContainer"]
+layout_mode = 2
+
+[node name="Eggs" type="Panel" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+modulate = Color(0.721569, 0.564706, 0.972549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4uxnd")
+script = ExtResource("8_r304t")
+
+[node name="TextureRect" type="TextureRect" parent="UI/LeftPanel/MarginContainer/VBoxContainer/Eggs"]
+custom_minimum_size = Vector2(0, 90)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.4884
+offset_right = 40.4884
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_ebswh")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Spacer" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer3" type="Control" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Energy" type="Label" parent="UI/LeftPanel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "9999"
+horizontal_alignment = 1
+script = ExtResource("14_nlhrt")
+
+[node name="RightPanel" type="PanelContainer" parent="UI"]
+offset_left = 1000.0
+offset_right = 1200.0
+offset_bottom = 800.0
+theme = ExtResource("3_4uxnd")
+
+[node name="MarginContainer2" type="MarginContainer" parent="UI/RightPanel"]
+layout_mode = 2
+theme_override_constants/margin_left = 25
+theme_override_constants/margin_top = 25
+theme_override_constants/margin_right = 25
+theme_override_constants/margin_bottom = 25
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/RightPanel/MarginContainer2"]
+layout_mode = 2
+
+[node name="Power" type="Panel" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+modulate = Color(0.721569, 0.564706, 0.972549, 1)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_4uxnd")
+script = ExtResource("10_1qqgf")
+
+[node name="TextureRect" type="TextureRect" parent="UI/RightPanel/MarginContainer2/VBoxContainer/Power"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Spacer" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer2" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Spacer3" type="Control" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Candy" type="Label" parent="UI/RightPanel/MarginContainer2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 10
+text = "10"
+horizontal_alignment = 1
+script = ExtResource("8_hgawp")
+
+[node name="Lab" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(1301.42, 1857.5)
+scale = Vector2(0.692547, 0.692547)
+texture = ExtResource("17_oxn28")
+
+[node name="Jailhouse" type="Sprite2D" parent="."]
+z_index = 3
+position = Vector2(1107.43, 2141.88)
+scale = Vector2(0.782639, 0.782639)
+texture = ExtResource("18_y6p5e")

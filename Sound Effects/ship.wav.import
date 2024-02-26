@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dcycjsj1rgkxa"
+path="res://.godot/imported/ship.wav-49fb1600ec8f3280d7db172edb2ff535.sample"
+
+[deps]
+
+source_file="res://Sound Effects/ship.wav"
+dest_files=["res://.godot/imported/ship.wav-49fb1600ec8f3280d7db172edb2ff535.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

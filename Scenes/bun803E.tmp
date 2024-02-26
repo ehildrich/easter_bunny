@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://cicrahjuh67h3"]
+
+[ext_resource type="Script" path="res://Scripts/bunny.gd" id="1_2lqmg"]
+[ext_resource type="Texture2D" uid="uid://cbu67f1i1n4y0" path="res://Assets/head.png" id="2_cm244"]
+[ext_resource type="Script" path="res://Scripts/power.gd" id="3_56t6v"]
+[ext_resource type="Texture2D" uid="uid://nmiycpl4v0l1" path="res://Assets/body1.png" id="3_fue6c"]
+[ext_resource type="Texture2D" uid="uid://bcnixdurwnro0" path="res://Assets/body2.png" id="3_lmkou"]
+[ext_resource type="Texture2D" uid="uid://b6h3a6vanquvr" path="res://Assets/body3.png" id="5_bsjfy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ouveg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fue6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bsjfy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_fue6c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lmkou")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 14.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5oemr"]
+size = Vector2(131, 200)
+
+[node name="Bunny" type="CharacterBody2D"]
+script = ExtResource("1_2lqmg")
+
+[node name="Head" type="CharacterBody2D" parent="."]
+script = ExtResource("3_56t6v")
+
+[node name="HeadSprite" type="Sprite2D" parent="Head"]
+position = Vector2(-13, -178)
+texture = ExtResource("2_cm244")
+
+[node name="Timer" type="Timer" parent="Head"]
+
+[node name="Body" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ouveg")
+animation = &"Walk"
+frame_progress = 0.165004
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, 25)
+shape = SubResource("RectangleShape2D_5oemr")
+
+[connection signal="timeout" from="Head/Timer" to="Head" method="_on_timer_timeout"]

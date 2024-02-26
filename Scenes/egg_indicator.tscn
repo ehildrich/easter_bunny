@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c405cr3v2exmp"]
+
+[ext_resource type="Texture2D" uid="uid://cdy3c730k6mmj" path="res://Assets/eggrevealicon.png" id="1_xbb7l"]
+[ext_resource type="Script" path="res://Scripts/eggIndicator.gd" id="2_xk3ym"]
+
+[node name="EggIndicator" type="Sprite2D"]
+modulate = Color(0.972549, 0.878431, 0.439216, 1)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_xbb7l")
+script = ExtResource("2_xk3ym")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+autostart = true

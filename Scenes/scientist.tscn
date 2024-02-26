@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://csitko52s40g5"]
+
+[ext_resource type="Script" path="res://Scripts/scientist.gd" id="1_bif4g"]
+[ext_resource type="Texture2D" uid="uid://bg741vp7imxlm" path="res://Assets/scientist.png" id="2_7hx6m"]
+[ext_resource type="AudioStream" uid="uid://dm5dm15g0w2in" path="res://Sound Effects/attacked.wav" id="3_7tudi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0bftm"]
+size = Vector2(65, 109)
+
+[node name="Scientist" type="CharacterBody2D" groups=["Enemy"]]
+script = ExtResource("1_bif4g")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.378571, 0.378571)
+texture = ExtResource("2_7hx6m")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0.5, 30.5)
+shape = SubResource("RectangleShape2D_0bftm")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.3
+autostart = true
+
+[node name="Audio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_7tudi")

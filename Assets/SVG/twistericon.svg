@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="100.84938mm"
+   height="73.852882mm"
+   viewBox="0 0 100.84938 73.852882"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="twistericon.svg"
+   inkscape:export-filename="..\confuseenemyicon.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#505050"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.73406285"
+     inkscape:cx="101.48995"
+     inkscape:cy="209.7913"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-54.575358,-37.75933)">
+    <path
+       d="m 116.65898,105.97081 a 27.727066,8.3910856 0 0 1 -11.65924,0.79426 27.727066,8.3910856 0 0 1 -11.647865,-0.79271 12.484437,3.7781847 0 0 0 -0.836125,1.34617 12.484437,3.7781847 0 0 0 12.48399,3.77806 12.484437,3.7781847 0 0 0 12.48451,-3.77806 12.484437,3.7781847 0 0 0 -0.82527,-1.34772 z"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:1.03124;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+       id="path6" />
+    <path
+       d="m 130.41886,91.850727 a 41.088894,12.434796 0 0 1 -25.41912,2.668054 41.088894,12.434796 0 0 1 -25.329204,-2.672705 27.727066,8.3910856 0 0 0 -2.397786,3.353284 27.727066,8.3910856 0 0 0 27.72699,8.39072 27.727066,8.3910856 0 0 0 27.72751,-8.39072 27.727066,8.3910856 0 0 0 -2.30839,-3.348633 z"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:2.29032;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+       id="path4" />
+    <path
+       d="m 143.36588,71.820426 a 48.424801,14.654874 0 0 1 -38.36614,5.715414 48.424801,14.654874 0 0 1 -38.295854,-5.691642 41.088894,12.434796 0 0 0 -2.792595,4.418851 41.088894,12.434796 0 0 0 41.088449,12.4349 41.088894,12.434796 0 0 0 41.08897,-12.4349 41.088894,12.434796 0 0 0 -2.72283,-4.442623 z"
+       style="display:inline;fill:#ffffff;stroke:#ffffff;stroke-width:3.39403;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+       id="path2"
+       inkscape:label="2nd" />
+    <path
+       d="M 104.99979,39.75933 A 48.424801,14.654874 0 0 0 56.575358,54.41425 48.424801,14.654874 0 0 0 104.99979,69.069169 48.424801,14.654874 0 0 0 153.42474,54.41425 48.424801,14.654874 0 0 0 104.99979,39.75933 Z m 0,2.848922 a 32.167133,7.6998672 0 0 1 32.16755,7.699788 32.167133,7.6998672 0 0 1 -32.16755,7.700306 32.167133,7.6998672 0 0 1 -32.167026,-7.700306 32.167133,7.6998672 0 0 1 32.167026,-7.699788 z"
+       style="fill:#ffffff;stroke:#ffffff;stroke-width:4;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.8"
+       id="path7" />
+  </g>
+</svg>
