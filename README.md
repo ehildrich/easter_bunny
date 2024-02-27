@@ -25,3 +25,6 @@ All power zones cost 100 energy to use, so use them wisely when your energy is r
 
 ## Enemies
 There are two types of enemies: Agents and Scientists. Both will take a little bit of energy, but the Scientist will steal some of your candy while the Agent will take one of your eggs and hide it in a random pit. 
+
+### Acknowledgements
+Thanks to [jsxfr](https://sfxr.me/) for all sound effects. 
